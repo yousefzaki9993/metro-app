@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="getstartlocation"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="173dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="8dp"
+        android:onClick="path"
+        android:text="اعرض مساري وتفاصيل الرحلة"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endtext" />
+
+    <AutoCompleteTextView
+        android:id="@+id/starttext"
+        android:layout_width="287dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="56dp"
+        android:hint="المحطة الابتدائية"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/endtext"
+        android:layout_width="290dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:hint="المحطة نزولك"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/starttext" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:hint="وضع توفير المجهود"
+        android:onClick="ef"
+        app:layout_constraintBottom_toTopOf="@+id/starttext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="125dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:onClick="getfinaldistnation"
+        android:text="اقرب محطة لهذا العنوان"
+        app:layout_constraintBottom_toTopOf="@+id/pathview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/n"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <EditText
+        android:id="@+id/disttext"
+        android:layout_width="189dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="ادخل عنوان"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="63dp"
+        android:layout_height="41dp"
+        android:layout_marginBottom="8dp"
+
+        android:onClick="getstartlocationonmap"
+        app:layout_constraintBottom_toTopOf="@+id/endtext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toEndOf="@+id/starttext"
+        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        app:layout_constraintVertical_bias="0.446"
+        app:srcCompat="@drawable/ic_location" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView3"
+        android:layout_width="122dp"
+        android:layout_height="43dp"
+        android:onClick="toat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/disttext"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="108dp"
+            android:layout_height="match_parent"
+            android:tint="#5E35B1"
+            app:srcCompat="@drawable/metrooo" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView4"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:onClick="toat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottomNavigationView5"
+        app:layout_constraintTop_toBottomOf="@+id/disttext"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="77dp"
+            android:layout_height="match_parent"
+            android:onClick="viewmap"
+            app:srcCompat="@drawable/map" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView5"
+        android:layout_width="61dp"
+        android:layout_height="43dp"
+        android:onClick="toat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottomNavigationView3" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView9"
+        android:layout_width="137dp"
+        android:layout_height="43dp"
+        android:onClick="toat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bottomNavigationView4"
+        app:layout_constraintTop_toBottomOf="@+id/pathview"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="47dp"
+            android:layout_height="match_parent"
+            android:onClick="views"
+            app:srcCompat="@drawable/iconmonstr_time_18" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <Button
+        android:id="@+id/n"
+        android:layout_width="122dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:onClick="neareststation"
+        android:text="المحطة الاقرب لموقعي  "
+        app:layout_constraintBottom_toTopOf="@+id/pathview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/endtext"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="232dp"
+        android:layout_height="59dp"
+        android:onClick="toat"
+        app:layout_constraintBottom_toTopOf="@+id/starttext"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pathview"
+        android:layout_width="377dp"
+        android:layout_height="331dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/disttext" />
+
+    <ImageView
+        android:id="@+id/mapon"
+        android:layout_width="49dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:onClick="viewadressonmap"
+        app:layout_constraintBottom_toTopOf="@+id/pathview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/disttext"
+        app:layout_constraintTop_toBottomOf="@+id/n"
+        app:layout_constraintVertical_bias="0.068"
+        app:srcCompat="@drawable/ic_location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
