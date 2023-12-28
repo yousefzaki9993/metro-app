@@ -69,7 +69,6 @@
         android:layout_width="143dp"
         android:layout_height="64dp"
         android:layout_marginTop="88dp"
-        android:backgroundTint="#00897B"
         android:onClick="alertme"
         android:text="نبهني في هذه المحطة"
         app:layout_constraintEnd_toEndOf="parent"
